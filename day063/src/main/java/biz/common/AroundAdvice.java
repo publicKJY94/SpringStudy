@@ -1,14 +1,32 @@
 package biz.common;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StopWatch;
 
+@Service
+@Aspect
 public class AroundAdvice {
-	public void printLog(ProceedingJoinPoint pjp) throws Throwable {
-		System.out.println("         시작 로그 05");
+	@Around("PointcutCommon.aPointcut()")
+	public Object aroundPrintLog(ProceedingJoinPoint pjp) throws Throwable {
+		String methodName=pjp.getSignature().getName();
 		
-		Object object = pjp.proceed();
+		System.out.println("[BEFORE]");
 		
+		StopWatch sw=new StopWatch();
+		sw.start();
 		
-		System.out.println("         종료 로그 06");
+		Object obj=pjp.proceed();
+		// 비즈니스 메서드가 수행됨
+		
+		sw.stop();
+		
+		System.out.println("[AFTER]");
+		System.out.println("비즈니스 메서드 : "+methodName);
+		System.out.println("수행하는데에 걸린시간 : "+sw.getTotalTimeMillis()+"(ms)초");
+		
+		return obj;
 	}
 }

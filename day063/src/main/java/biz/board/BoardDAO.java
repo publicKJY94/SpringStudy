@@ -23,6 +23,7 @@ public class BoardDAO {
 	private static final String DELETE="";
 
 	public ArrayList<BoardDTO> selectAll(BoardDTO bDTO) {
+		System.out.println("BoardDAO의 selectAll 확인용 로그");
 		ArrayList<BoardDTO> datas=new ArrayList<BoardDTO>();
 
 		conn=JDBCUtil.connect();
