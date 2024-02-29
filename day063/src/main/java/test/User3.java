@@ -43,6 +43,7 @@ public class User3 { // Client(브라우저)
 						break;
 					} else {
 						System.out.println("로그인에 실패했습니다");
+						continue;
 					}
 				}
 			} else if (btn == 2) {

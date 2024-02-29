@@ -13,7 +13,6 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public ArrayList<BoardDTO> selectAll(BoardDTO bDTO) {
-		// TODO Auto-generated method stub
 		return bDAO.selectAll(bDTO);
 	}
 
