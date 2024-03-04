@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Aspect
 public class AfterReturningAdvice {
 	
-	@AfterReturning(pointcut="bPointcut()", returning="returnObj")
+	@AfterReturning(pointcut="PointcutCommon.bPointcut()", returning="returnObj")
 	public void printLog(JoinPoint jp, Object returnObj) {
 		System.out.println("         비즈니스 메서드 수행 후 로그 03");
 	}
