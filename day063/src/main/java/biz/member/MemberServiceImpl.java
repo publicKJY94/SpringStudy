@@ -3,18 +3,21 @@ package biz.member;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service("memberService") // 가독성 향상, 컨테이너가 같은 @끼리 잘 정리하여 보관하여 처리속도 향상
+// 1. xxxImpl 네? 아, 인터페이스를 구현한 클래스겠구나!
+// 2. 인터페이스를 사용했네? 아, 메서드 시그니쳐를 강제해야했구나!
+// 3. 왜 강제해? 아, 의존관계에 있는 객체가 해당 메서드 시그니쳐겠구나!
+@Service("memberService")
+// 1. 가독성 ↑ : 개발자가 이 객체가 Service 레이어의 객체임을 빠르게 파악가능!
+// 2. 스프링 컨테이너가 메모리 관리를 하잖아요? 같은 @끼리 메모리위치를 잘 정리하여 관리가능!
 public class MemberServiceImpl implements MemberService {
-	
+
 	@Autowired
 	private MemberDAO mDAO;
-	
+
 	@Override
 	public ArrayList<MemberDTO> selectAll(MemberDTO mDTO) {
-		// TODO Auto-generated method stub
 		return mDAO.selectAll(mDTO);
 	}
 

@@ -13,31 +13,30 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public ArrayList<BoardDTO> selectAll(BoardDTO bDTO) {
-		// TODO Auto-generated method stub
 		return bDAO.selectAll(bDTO);
 	}
 
 	@Override
 	public BoardDTO selectOne(BoardDTO bDTO) {
-		// TODO Auto-generated method stub
 		return bDAO.selectOne(bDTO);
 	}
 
 	@Override
 	public boolean insert(BoardDTO bDTO) {
-		// TODO Auto-generated method stub
+		/*
+		 * if(bDTO.getBid()==0) { // 무조건 예외발생할수있도록 if 조건문 작성 throw new
+		 * ArithmeticException(); // 컴파일러가 무시하는 예외 클래스 }
+		 */
 		return bDAO.insert(bDTO);
 	}
 
 	@Override
 	public boolean update(BoardDTO bDTO) {
-		// TODO Auto-generated method stub
 		return bDAO.update(bDTO);
 	}
 
 	@Override
 	public boolean delete(BoardDTO bDTO) {
-		// TODO Auto-generated method stub
 		return bDAO.delete(bDTO);
 	}
 
