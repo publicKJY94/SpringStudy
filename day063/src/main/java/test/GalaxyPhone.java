@@ -4,9 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-
 @Component("galaxy")
 public class GalaxyPhone implements Phone {
 	@Autowired
@@ -17,17 +14,16 @@ public class GalaxyPhone implements Phone {
 		this.watch=watch;
 		System.out.println("갤럭시 폰 생성자 주입 완료");
 	}
-	*/
 	public void setWatch(Watch watch) {
 		this.watch = watch;
 		System.out.println("갤럭시 폰 Setter 주입 완료");
 	}
+	*/
 	
 	@Override
 	public void powerOn() {
 		watch.powerOn();
 	}
-	
 	@Override
 	public void powerOff() {
 		watch.powerOff();
