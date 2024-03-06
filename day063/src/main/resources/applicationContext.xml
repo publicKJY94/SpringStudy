@@ -12,11 +12,11 @@
       http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
       http://www.springframework.org/schema/tx
       http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
-	
+	<!-- @component를 탐지하여 객체를 생성하기 위함 -->
 	<context:component-scan base-package="com.spring.biz" />
-
+  <!-- @aspect를 탐지하여 자동으로 spring aop에 반영하기 위함 -->
 	<aop:aspectj-autoproxy />
-	
+	<!-- dbms를 사용하기 위한 소스설정 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/kimdb" />
