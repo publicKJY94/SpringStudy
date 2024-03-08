@@ -48,12 +48,12 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("FC : "+commend);
 
 		Controller controller=handler.getController(commend);
-		ModelAndView mav = controller.handleRequest(request, response);
+//		ModelAndView mav = controller.handleRequest(request, response);
 
-		if(!mav.getViewName().contains(".do")) {
-			mav.setViewName(viewResolver.getView(mav.getViewName()));
-		}
-		response.sendRedirect(mav.getViewName());
+//		if(!mav.getViewName().contains(".do")) {
+//			mav.setViewName(viewResolver.getView(mav.getViewName()));
+//		}
+//		response.sendRedirect(mav.getViewName());
 
 	}
 }
